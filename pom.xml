@@ -25,6 +25,14 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+   
+    <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+	<dependency>
+    	<groupId>org.sonarsource.scanner.maven</groupId>
+    	<artifactId>sonar-maven-plugin</artifactId>
+    	<version>3.9.1.2184</version>
+	</dependency>
+    
   </dependencies>
 
   <build>
@@ -69,7 +77,40 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>exec-maven-plugin</artifactId>
+           <version>1.6.0</version>
+          <configuration>
+            <mainClass>org. uke.com.theerdha_first_proj.App</mainClass>
+        </configuration>
+        </plugin>
+		<plugin>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+	  	<configuration>
+   		<url>http://54.213.200.174/:8090/manager</url>
+   		<server>TomcatServer</server>
+   		<path>/helloworld-webapp</path>
+		  </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
+  
+  <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://localhost:9000
+                </sonar.host.url>
+            </properties>
+        </profile>
+     </profiles>
 </project>
