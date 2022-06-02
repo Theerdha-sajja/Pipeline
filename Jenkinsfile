@@ -4,6 +4,7 @@ pipeline{
 		       stage('one'){
 					steps{
 					       echo "Hello Theerdha"
+						sh 'git clone https://github.com/Theerdha-sajja/Pipeline.git'
 					      }
 				    }
                       stage('two'){
