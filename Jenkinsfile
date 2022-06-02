@@ -1,16 +1,6 @@
 pipeline{
 		agent any
-	        tools {
-       		         maven "MAVEN"
-                         jdk "JAVA"
-                      }
-                stages {
-                       stage('Initialize'){
-                       steps{
-                             echo "PATH = ${MAVEN_HOME}/bin:${PATH}"
-                             //echo "M2_HOME = /opt/maven"
-                            }
-                          }
+	stages{
 		       stage('three'){
 					steps{
 						bat "git clone   https://github.com/Theerdha-sajja/Pipeline.git"
