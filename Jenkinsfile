@@ -11,22 +11,20 @@ pipeline{
                              //echo "M2_HOME = /opt/maven"
                             }
                           }
-			enviroment{
-				PATH = " D:\DevOps_softwares\apache-maven-3.8.5\bin:$PATH"
-			}
 		       stage('three'){
 					steps{
-					       sh 'mvn validate'
+						bat "git clone   https://github.com/Theerdha-sajja/Pipeline.git"
+					        bat "mvn validate"
 					      }
 				     }
 		       stage('four'){
 					 steps{
-					        sh 'mvn compile'
+					        bat "mvn compile"
 					      }
 				    }							
 		       stage('five'){
 					 steps{
-					        sh 'mvn package'
+					        bat "mvn package"
 					      }
                 			}
 			   }
