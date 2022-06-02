@@ -11,16 +11,9 @@ pipeline{
                              //echo "M2_HOME = /opt/maven"
                             }
                           }
-		       stage('one'){
-					steps{
-					       echo "Hello Theerdha"
-					      }
-				    }
-                      stage('two'){
-                                   steps{
-                                   input('do you want to proceed?')
-                                 }
-                            }
+			enviroment{
+				PATH = " D:\DevOps_softwares\apache-maven-3.8.5\bin:$PATH"
+			}
 		       stage('three'){
 					steps{
 					       sh 'mvn validate'
