@@ -1,6 +1,16 @@
 pipeline{
 		agent any
-		stages{
+	        tools {
+       		         maven "MAVEN"
+                         jdk "JAVA"
+                      }
+                stages {
+                       stage('Initialize'){
+                       steps{
+                             echo "PATH = ${MAVEN_HOME}/bin:${PATH}"
+                             //echo "M2_HOME = /opt/maven"
+                            }
+                          }
 		       stage('one'){
 					steps{
 					       echo "Hello Theerdha"
