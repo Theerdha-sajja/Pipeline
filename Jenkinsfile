@@ -13,17 +13,17 @@ pipeline{
                             }
 		       stage('three'){
 					steps{
-					       mvn validate
+					       sh 'mvn validate'
 					      }
 				     }
 		       stage('four'){
 					 steps{
-					        mvn compile
+					        sh 'mvn compile'
 					      }
 				    }							
 		       stage('five'){
 					 steps{
-					        mvn package
+					        sh 'mvn package'
 					      }
                 			}
 			   }
