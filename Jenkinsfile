@@ -4,17 +4,17 @@ pipeline{
 		       stage('three'){
 					steps{
 						//bat "git clone   https://github.com/Theerdha-sajja/Pipeline.git"
-					        bat "mvn validate"
+					        sh "mvn validate"
 					      }
 				     }
 		       stage('four'){
 					 steps{
-					        bat "mvn compile"
+					        sh "mvn compile"
 					      }
 				    }							
 		       stage('five'){
 					 steps{
-					        bat "mvn package"
+					        sh "mvn package"
 					      }
                 			}
 			   }
